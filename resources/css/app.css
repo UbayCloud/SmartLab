@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    input,
+    select,
+    textarea {
+        @apply bg-white text-gray-900 placeholder:text-gray-400;
+    }
+
+    .dark input,
+    .dark select,
+    .dark textarea {
+        @apply bg-gray-700 text-white placeholder:text-gray-400 border-gray-600;
+    }
+}
