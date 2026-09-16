@@ -132,22 +132,8 @@
 
                     </div>
 
-                    {{-- Kondisi --}}
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">
-                            Kondisi
-                        </label>
-
-                        <select name="kondisi"
-                            class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-
-                            <option value="baik"
-                                {{ old('kondisi') == 'baik' ? 'selected' : '' }}>
-                                Baik
-                            </option>
-
-                        </select>
-                    </div>
+                    {{-- Kondisi (Hidden) --}}
+                    <input type="hidden" name="kondisi" value="baik">
 
                     {{-- FOTO ALAT --}}
                     <div class="md:col-span-2">

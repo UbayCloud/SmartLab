@@ -119,67 +119,46 @@
                     </div>
 
 
-                    {{-- Kondisi --}}
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">
-                            Kondisi
-                        </label>
-
-                        <select name="kondisi"
-                            class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-
-                            <option value="baik"
-                                {{ old('kondisi',$alat->kondisi)=='baik' ? 'selected':'' }}>
-                                Baik
-                            </option>
-
-                        </select>
-                    </div>
+                    {{-- Kondisi (Hidden) --}}
+                    <input type="hidden" name="kondisi" value="baik">
 
 
                     {{-- FOTO --}}
                     <div>
-                        <label class="block text-sm font-semibold mb-3">
-                            Foto Alat
+                        <label class="block text-sm font-semibold mb-2">
+                           Foto saat ini
                         </label>
 
-                        <div class="border-2 border-dashed border-gray-300 rounded-2xl p-5">
+                        {{-- Preview foto lama --}}
+                        @if($alat->gambar)
+                        <div class="mb-4">
+                            <p class="block text-sm font-semibold mb-2"></p>
 
-                            @if($alat->gambar)
-
-                            <div class="mb-5">
-
-                                <p class="text-sm text-gray-500 mb-3">
-                                    Foto saat ini
-                                </p>
-
-                                <img src="{{ asset('storage/'.$alat->gambar) }}"
-                                    class="w-44 h-44 object-cover rounded-xl border shadow">
-
-                            </div>
-
-                            @endif
-
-                            <input type="file"
-                                name="gambar"
-                                accept="image/jpeg,image/png,image/webp"
-                                class="block w-full text-sm
-                                       file:mr-4 file:py-2 file:px-4
-                                       file:rounded-lg file:border-0
-                                       file:bg-blue-600 file:text-white
-                                       hover:file:bg-blue-700">
-
-                            <p class="text-xs text-gray-500 mt-2">
-                                JPG, PNG, WEBP • Maksimal 2 MB
-                            </p>
-
-                            @error('gambar')
-                            <p class="text-red-500 text-sm mt-2">
-                                {{ $message }}
-                            </p>
-                            @enderror
-
+                            <img src="{{ asset('storage/'.$alat->gambar) }}"
+                                alt="{{ $alat->nama_alat }}"
+                                class="w-40 h-40 object-cover rounded-xl border border-gray-300 shadow">
                         </div>
+                        @endif
+
+                        {{-- Upload baru (sama seperti create) --}}
+                        <input
+                            type="file"
+                            name="gambar"
+                            accept="image/jpeg,image/png,image/webp"
+                            class="w-full rounded-xl border border-gray-300 p-3
+               file:mr-4 file:px-4 file:py-2
+               file:rounded-lg file:border-0
+               file:bg-blue-50 file:text-blue-600
+               hover:file:bg-blue-100">
+
+                        <p class="text-xs text-gray-500 mt-2">
+                            Format: JPG, PNG, WEBP • Maksimal 2 MB.
+                            Kosongkan jika tidak ingin mengganti foto.
+                        </p>
+
+                        @error('gambar')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
 
