@@ -1,3 +1,7 @@
 <?php
 
-echo "PHP Vercel Berjalan";
+echo "BEFORE LARAVEL";
+
+require __DIR__ . '/../public/index.php';
+
+echo "AFTER LARAVEL";
