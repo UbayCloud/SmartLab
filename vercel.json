@@ -1,5 +1,11 @@
 {
+  
   "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
   "builds": [
     {
       "src": "public/index.php",
@@ -19,4 +25,5 @@
       "dest": "public/index.php"
     }
   ]
+  
 }
