@@ -85,7 +85,7 @@
                                     <div class="flex items-center gap-3">
 
                                         @if($p->alat && $p->alat->gambar)
-                                            <img src="{{ asset('storage/'.$p->alat->gambar) }}"
+                                            <img src="{{ 'https://smartlab-image.ubaidillahrahmann.workers.dev/' . $alt->gambar }}"
                                                 class="w-12 h-12 rounded-lg object-cover border">
                                         @else
                                             <div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">

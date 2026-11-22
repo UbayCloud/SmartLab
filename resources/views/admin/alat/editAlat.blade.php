@@ -134,7 +134,7 @@
                         <div class="mb-4">
                             <p class="block text-sm font-semibold mb-2"></p>
 
-                            <img src="{{ asset('storage/'.$alat->gambar) }}"
+                            <img src="{{ 'https://smartlab-image.ubaidillahrahmann.workers.dev/' . $alt->gambar }}"
                                 alt="{{ $alat->nama_alat }}"
                                 class="w-40 h-40 object-cover rounded-xl border border-gray-300 shadow">
                         </div>

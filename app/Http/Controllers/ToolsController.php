@@ -57,7 +57,7 @@ class ToolsController extends Controller
         $gambar = null;
 
         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar')->store('alat', 'public');
+            $gambar = $request->file('gambar')->store('alat', 'r2');
         }
 
         // Simpan data alat
@@ -125,11 +125,11 @@ class ToolsController extends Controller
 
             // Hapus foto lama jika ada
             if ($tool->gambar && Storage::disk('public')->exists($tool->gambar)) {
-                Storage::disk('public')->delete($tool->gambar);
+                Storage::disk('r2')->delete($tool->gambar);
             }
 
             // Simpan foto baru
-            $data['gambar'] = $request->file('gambar')->store('alat', 'public');
+            $data['gambar'] = $request->file('gambar')->store('alat', 'r2');
         }
 
         $tool->update($data);

@@ -160,7 +160,7 @@
                                                 @if ($alt->gambar)
 
                                                     <img
-                                                        src="{{ asset('storage/' . $alt->gambar) }}"
+                                                        src="{{ 'https://smartlab-image.ubaidillahrahmann.workers.dev/' . $alt->gambar }}"
                                                         alt="{{ $alt->nama_alat }}"
                                                         class="w-full h-full object-cover"
                                                     >

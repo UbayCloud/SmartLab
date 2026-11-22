@@ -197,7 +197,7 @@
 
                                                 @if($p->alat && $p->alat->gambar)
 
-                                                    <img src="{{ asset('storage/' . $p->alat->gambar) }}"
+                                                    <img src="{{ 'https://smartlab-image.ubaidillahrahmann.workers.dev/' . $alt->gambar }}"
                                                         alt="{{ $p->alat->nama_alat }}"
                                                         class="w-full h-full object-cover">
 
